@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import VoiceActorSearch from '../components/VoiceActorSearch.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <VoiceActorSearch />
   </main>
 </template>

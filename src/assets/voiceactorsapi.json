@@ -1,0 +1,238 @@
+{
+  "providers": [
+    {
+      "id": 324475,
+      "user_id": 324475,
+      "service_id": "voice_over",
+      "payment_methods": [
+        1000,
+        1001,
+        1002,
+        1004
+      ],
+      "headline": "Conversational, engaging, fun, heart-full, wise, comforting, warm, knowledgeable, upscale, many dialects and comic characters",
+      "summary": "My voice qualities are: warm and engaging for narration, exceptionally fun and dynamic for e-Learning, soothing and empathetic for pharma, and upscale, very smart, and smooth for professional presentations.  I have outstandingly fun characters in my wheelhouse as well!",
+      "favorite": false,
+      "additional_services": [],
+      "allow_bookings": false,
+      "seo_properties": null,
+      "booking_rates": null,
+      "stats": {
+        "water_level": 98.91304347826087,
+        "ranking_score": null,
+        "ranking_score_centil": null,
+        "ctr_score": 0,
+        "messages_response_rate": null,
+        "messages_median_response_time": null,
+        "offers_posted": 20,
+        "offers_liked": null,
+        "favorited_count": null,
+        "reviews_count": null,
+        "reviews_rating": null,
+        "search_ctr": null,
+        "search_impressions": null,
+        "search_actions": null,
+        "unread_bookings_invitations": 0,
+        "unread_projects_invitations": 0,
+        "bookings_accepted": null,
+        "bookings_accepted_last_year": null,
+        "booked_clients": null,
+        "bought_subscriptions": null,
+        "reviews_score": null
+      },
+      "membership_product_name": "premium-5",
+      "membership_peak_start": 1520467200000,
+      "locations": [],
+      "user": {
+        "id": 324475,
+        "public_hash": "U2GB7EK",
+        "username": "rebeccaalicewhite",
+        "linkedin_url": "",
+        "location": "Petaluma, California, United States",
+        "name": "Rebecca Alice White",
+        "last_interaction": "2024-04-16T13:52:02.482Z",
+        "roles": [
+          "client",
+          "provider",
+          "provider",
+          "user"
+        ],
+        "isAi": false,
+        "experiments": [
+          "bookings",
+          "booking_settings"
+        ],
+        "picture_small": "https://v1-media.s3.amazonaws.com:443/sandbox/pics/users/324475/r_r2wT0.jpg",
+        "picture_medium": "https://v1-media.s3.amazonaws.com:443/sandbox/pics/users/324475/r_r2wT0.jpg",
+        "picture_large": "https://v1-media.s3.amazonaws.com:443/sandbox/pics/users/324475/l_r2wT0.jpg",
+        "created_at": "2016-07-27T00:00:00.000Z"
+      },
+      "relevant_sample": {
+        "id": 8819783,
+        "name": "eLearning mature, fun and various approaches",
+        "provider_id": 324475,
+        "demo_id": 57640,
+        "additional_info": " ",
+        "display_order": 0,
+        "is_approved": false,
+        "file": "demos/rebeccaalicewhite - eLearning mature fun and various approaches.mp3",
+        "additional_services": [],
+        "languages": [
+          1017
+        ],
+        "is_valid": true,
+        "display_transcript": false,
+        "service_id": "voice_over",
+        "created_at": "2016-07-27T00:00:00.000Z",
+        "updated_at": "2016-07-27T00:00:00.000Z",
+        "reviewed": false,
+        "voice_types": [
+          1003
+        ],
+        "voice_age_genders": [
+          1006
+        ]
+      },
+      "additional_details": "My happy corporate clients include but are not limited to: Hood Sour Cream, Pledge, Crisco, Lysol, Pampers, J&J Disposable Diapers, Kleenex, Oxydol, Deerpark Water, Jello, Best Stores etc.\nBA in Drama from UC Berkeley (Dean's list), graduate level work in clinical psychology Pepperdine University\n2 years full time acting training at The American Conservatory Theater in S.F. (won best actress in yearly national theater school competition)\n2 years full time acting training in the Sanford Meisner method in NYC\n2 years full time voice over training at Voicetrax, voice-over academy in Sausalito, Ca. \nAdditional training with Thom Pinto, J Michael Collins, Peter Dunne & Brian Sommer\nImprovisation at Bay Area Theater Sports, Rachel Hamilton\n3 years singing training\nHighest quality professionally designed voice studio with immaculate acoustic control. Primary microphone is an ADK TC/TT tube condenser microphone, Focusrite Scarlett 2i2 second generation, and Beyerdynamic DT 770 Studio headphones.\nI am a master at taking direction! Why? I listen really well, am extremely smart, and flexible. I have a lot of talent for variety.",
+      "description": "I excel at eLearning, explainer and corporate narration. You will get exactly what you want based on my excellent ability to take direction. I am a master at it!",
+      "languages": [
+        1017,
+        1020,
+        1018
+      ],
+      "voice_age_genders": [
+        1006,
+        1008
+      ],
+      "voice_types": [
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1009,
+        1012
+      ],
+      "recording_capabilities": [
+        1000,
+        1003,
+        1004
+      ],
+      "unions": [
+        1007
+      ]
+    },
+    {
+      "id": 1008877,
+      "user_id": 1008877,
+      "service_id": "voice_over",
+      "payment_methods": [
+        1000,
+        1002
+      ],
+      "headline": "Warm, versatile, engaging",
+      "summary": "Warm and deep for narrations; easy, natural, fun, strong and convincing for commercials; engaging, varied and mysterious for audiobooks; professional, knowledgeable, articulate and smooth for corporate trainings, e-learning, explainer videos and documentaries; rich and dramatic for trailers and promos; friendly, clear and polished for telephony.",
+      "favorite": false,
+      "additional_services": [],
+      "allow_bookings": false,
+      "seo_properties": null,
+      "booking_rates": null,
+      "stats": {
+        "water_level": 98.91304347826087,
+        "ranking_score": null,
+        "ranking_score_centil": null,
+        "ctr_score": 0,
+        "messages_response_rate": null,
+        "messages_median_response_time": null,
+        "offers_posted": 165,
+        "offers_liked": null,
+        "favorited_count": null,
+        "reviews_count": null,
+        "reviews_rating": null,
+        "search_ctr": null,
+        "search_impressions": null,
+        "search_actions": null,
+        "unread_bookings_invitations": 0,
+        "unread_projects_invitations": 0,
+        "bookings_accepted": null,
+        "bookings_accepted_last_year": null,
+        "booked_clients": null,
+        "bought_subscriptions": null,
+        "reviews_score": null
+      },
+      "membership_product_name": "premium-5",
+      "membership_peak_start": 1513468800000,
+      "locations": [],
+      "user": {
+        "id": 1008877,
+        "public_hash": "2LHMLEXW",
+        "username": "davidkulle",
+        "linkedin_url": "",
+        "location": "Hartford, Connecticut, United States",
+        "name": "David Kulle",
+        "last_interaction": "2024-04-16T13:52:02.482Z",
+        "roles": [
+          "client",
+          "user",
+          "provider"
+        ],
+        "isAi": false,
+        "experiments": [
+          "bookings",
+          "booking_settings"
+        ],
+        "created_at": "2017-11-21T00:00:00.000Z"
+      },
+      "relevant_sample": {
+        "id": 8629565,
+        "name": "Craftsman: Bold, tough, strong, mature",
+        "provider_id": 1008877,
+        "demo_id": 56092,
+        "additional_info": " ",
+        "display_order": 3,
+        "is_approved": false,
+        "file": "demos/davidkulle - Craftsman Bold tough strong mature.mp3",
+        "additional_services": [],
+        "languages": [
+          1018
+        ],
+        "is_valid": true,
+        "display_transcript": false,
+        "service_id": "voice_over",
+        "meta_data": {},
+        "created_at": "2017-11-21T00:00:00.000Z",
+        "updated_at": "2023-12-22T07:42:23.980Z",
+        "reviewed": false,
+        "voice_types": [
+          1000
+        ],
+        "voice_age_genders": [
+          1007
+        ]
+      },
+      "additional_details": "Such a Voice VIP program; Such a Voice Guru program; Yale School of Music - Master of Music in Voice; University of Connecticut School of Law - Juris Doctor; multiple lectures, presentations, corporate trainings, and corporate videos.\nMicrophone - RODE NT1-A\nComputer - iMac\nSoftware - Audacity\nAudio Interface - Focusrite Scarlett Solo Gen2\nDelivery Methods - MP3, WAV",
+      "description": "Country/\"NASCAR\"",
+      "languages": [
+        1018
+      ],
+      "voice_age_genders": [
+        1005,
+        1007,
+        1009
+      ],
+      "voice_types": [
+        1000,
+        1002,
+        1004,
+        1006,
+        1008,
+        1013
+      ],
+      "recording_capabilities": [
+        1000,
+        1003
+      ],
+      "unions": []
+    }
+  ]
+}

@@ -8,9 +8,9 @@
 }
 
 a,
-.green {
+.blue {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: #1e88e5;
   transition: 0.4s;
   padding: 3px;
 }
@@ -28,8 +28,6 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
 }
