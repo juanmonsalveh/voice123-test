@@ -57,12 +57,12 @@ voiceActorService
 </script>
 
 <template>
-  <div class="search-container">
+  <div class="">
     <div v-if="items.length === 0 && loading">Loading...</div>
 
 		<div
 			v-if="items.length > 0"
-			class="actor-list"
+			class="vactor-list"
 		>
 			<VoiceActorCard
 				v-for="actor in items"
@@ -78,7 +78,7 @@ voiceActorService
 </template>
 
 <style scoped>
-.search-container {
+.vactor-list {
     display: flex;
     flex-wrap: wrap;
 }
