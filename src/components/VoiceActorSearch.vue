@@ -11,24 +11,44 @@ import type { VoiceActorSearchI } from "@/interfaces";
 const store = useStore();
 const loading = ref(false);
 const { items } = storeToRefs(store);
+const searchQuery = ref("");
+
 // Move to constants folder
 const DEFAULT_PARAMS: VoiceActorSearchI = {
 	page: 1,
-	keywords: "woman",
+	keywords: "",
 	service: "voice_over",
 };
 
-onBeforeMount(async () => {
+
+const fetchVoiceActors = async (params: VoiceActorSearchI) => {
 	try {
 		loading.value = true;
-		await store.fetchVoiceActors(DEFAULT_PARAMS)
+		await store.fetchVoiceActors(params);
 	} catch (err) {
-		console.log(err)
+		console.log(err);
 	} finally {
 		loading.value = false;
 	}
+};
+
+onBeforeMount(async () => {
+	fetchVoiceActors(DEFAULT_PARAMS);
 })
 
+const handleSearch = () => {
+	const params: VoiceActorSearchI = {
+		...DEFAULT_PARAMS,
+		keywords: searchQuery.value,
+	};
+	fetchVoiceActors(params);
+};
+
+const handleKeyPress = (event: KeyboardEvent) => {
+	if (event.key === "Enter") {
+		handleSearch();
+	}
+};
 
 /*
 // definitions
@@ -57,12 +77,21 @@ voiceActorService
 </script>
 
 <template>
+
+	<div class="search-bar blue">
+		<v-text-field clearable label="Search" variant="outlined" 
+			v-model="searchQuery" @keypress="handleKeyPress"></v-text-field>
+		<v-btn variant="tonal" @click="handleSearch">
+			Search
+		</v-btn>
+	</div>
+
   <div class="">
     <div v-if="items.length === 0 && loading">Loading...</div>
 
 		<div
 			v-if="items.length > 0"
-			class="vactor-list"
+			class="voice-actor-list"
 		>
 			<VoiceActorCard
 				v-for="actor in items"
@@ -78,8 +107,16 @@ voiceActorService
 </template>
 
 <style scoped>
-.vactor-list {
-    display: flex;
-    flex-wrap: wrap;
+.voice-actor-list {
+		display: flex;
+		flex-wrap: wrap;
 }
+.search-bar {
+	display: flex;
+	gap: 2%;
+	width: 60%;
+	margin: auto;
+	align-items: center;
+}
+
 </style>
