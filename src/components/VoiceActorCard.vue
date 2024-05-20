@@ -15,7 +15,7 @@ const show = ref(false);
 
 <template>
     <v-card class="mx-auto card-item" max-width="344" rounded="10%">
-      <div class="picture-container">
+      <div class="picture-container " > 
         <v-img
           height="200px" width="200px"
           cover
@@ -24,11 +24,12 @@ const show = ref(false);
         </v-img>
       </div>
   
-      <v-card-title> 
+      <v-card-title class="title-center"> 
         <a :href="'https://voice123.com/'+voiceActor.user.username" target="_blank" rel="noopener">{{ voiceActor.user.name }}</a>
       </v-card-title>
-      <div class="audio-player">
-        <audio v-show="voiceActor.relevant_sample?.file" controls :src="encodeURIComponent(voiceActor.relevant_sample.file)">
+      <div class="audio-player audio-center">
+        <audio class="audio-center" 
+          v-show="voiceActor.relevant_sample?.file" controls :src="encodeURIComponent(voiceActor.relevant_sample.file)">
           <a :href="encodeURIComponent(voiceActor.relevant_sample.file)">Download audio</a>
         </audio>
       </div>
@@ -66,9 +67,17 @@ const show = ref(false);
       margin-top: 2%; 
     }
     .picture-container{
-      display: inline-flex;
-      margin: 2%;
+      display: flex;
+      margin: 2% auto;
       width: 200px;
       height: 200px;
+    }
+    .title-center{
+      justify-content: center;
+      display: flex;
+    }
+    .audio-center{
+      display: flex;
+      margin: auto;
     }
 </style>
