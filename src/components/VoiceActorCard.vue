@@ -29,7 +29,9 @@ const show = ref(false);
       </v-card-title>
       <div class="audio-player audio-center">
         <audio class="audio-center" 
-          v-show="voiceActor.relevant_sample?.file" controls :src="encodeURIComponent(voiceActor.relevant_sample.file)">
+          controls :src="encodeURIComponent(voiceActor.relevant_sample.file)">
+          <!-- create function to transform url and try -->
+          <!-- https://api.sandbox.voice123.com/demo27794761_52693.mp3 -->
           <a :href="encodeURIComponent(voiceActor.relevant_sample.file)">Download audio</a>
         </audio>
       </div>
@@ -61,8 +63,8 @@ const show = ref(false);
       background-color: aliceblue;
     }
     .card-item{
-      flex: 1 1 calc(33.333% - 10px); /* Los elementos ocupan un tercio del ancho del contenedor menos un pequeño margen */
-      margin: 5px; /* Espacio entre elementos */
+      flex: 1 1 calc(33.333% - 10px); /* 1/3 width, to make it 3 per row */
+      margin: 5px;
       box-sizing: border-box;
       margin-top: 2%; 
     }

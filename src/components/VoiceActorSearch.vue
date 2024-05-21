@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import VoiceActorCard from "./VoiceActorCard.vue";
 
-// import type { VoiceActorI, VoiceActorSearchI } from "@/core/models/VoiceActorInterfaces";
-// import { VoiceActorService } from "../core/services/VoiceActorService";
 import { onBeforeMount, ref, watch } from "vue";
 import { useStore } from "@/store";
 import { storeToRefs } from "pinia";
@@ -57,36 +55,12 @@ watch(page, () => {
 	handleSearch();
 });
 
-/*
-// definitions
-const voiceActorService = new VoiceActorService();
-
-// business
-const voiceActors = ref<VoiceActorI[]>([]);
-
-const searchParams: VoiceActorSearchI = {
-    page: 1,
-    keywords: "woman",
-    service: "voice_over",
-};
-
-voiceActorService
-    .getVoiceActorByKeywordsPaginated(searchParams)
-    .then((result: VoiceActorI[]) => {
-        console.log("Voice Actors:", result);
-        voiceActors.value = result;
-    })
-    .catch((error: Error) => {
-        console.error("Error fetching voice actors:", error);
-    });
-*/
-
 </script>
 
 <template>
 
 	<div class="search-bar blue">
-		<v-text-field clearable label="Search" variant="outlined" 
+		<v-text-field label="Search" variant="outlined" 
 			v-model="searchQuery" @keypress="handleKeyPress"></v-text-field>
 		<v-btn variant="tonal" @click="handleSearch">
 			Search
