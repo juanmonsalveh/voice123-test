@@ -9,7 +9,7 @@ import { storeToRefs } from "pinia";
 import type { VoiceActorSearchI } from "@/interfaces";
 
 const store = useStore();
-const { items } = storeToRefs(store);
+const { items, totalPages } = storeToRefs(store);
 
 const loading = ref(false);
 const searchQuery = ref("");
@@ -119,7 +119,7 @@ voiceActorService
           <v-container class="max-width">
             <v-pagination
               v-model="page"
-              :length="15"
+              :length="totalPages"
               class="my-4"
             ></v-pagination>
           </v-container>

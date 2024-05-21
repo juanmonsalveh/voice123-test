@@ -3,11 +3,13 @@ import type { VoiceActorI, VoiceActorPaginatedResult, VoiceActorSearchI } from "
 
 interface State {
 	items: VoiceActorI[],
+	totalPages: number,
 }
 
 export const useStore = defineStore('main',  {
 	state: (): State => ({
 		items: [],
+		totalPages: 0,
 	}),
 
 	actions: {
@@ -20,6 +22,11 @@ export const useStore = defineStore('main',  {
 			// Make in Interceptor
     		if (!response.ok)  throw new Error('Network response was not ok');
 			// Try with axios
+
+			const totalPagesHeader = response.headers.get('x-list-total-pages');
+			if (totalPagesHeader) this.totalPages = parseInt(totalPagesHeader, 10);
+			else this.totalPages = 1; 
+			
 			const data: VoiceActorPaginatedResult = await response.json();
 			this.items = data.providers;
 		},
