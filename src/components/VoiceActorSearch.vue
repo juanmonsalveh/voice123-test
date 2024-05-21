@@ -3,15 +3,17 @@ import VoiceActorCard from "./VoiceActorCard.vue";
 
 // import type { VoiceActorI, VoiceActorSearchI } from "@/core/models/VoiceActorInterfaces";
 // import { VoiceActorService } from "../core/services/VoiceActorService";
-import { onBeforeMount, ref } from "vue";
+import { onBeforeMount, ref, watch } from "vue";
 import { useStore } from "@/store";
 import { storeToRefs } from "pinia";
 import type { VoiceActorSearchI } from "@/interfaces";
 
 const store = useStore();
-const loading = ref(false);
 const { items } = storeToRefs(store);
+
+const loading = ref(false);
 const searchQuery = ref("");
+const page = ref(1);
 
 // Move to constants folder
 const DEFAULT_PARAMS: VoiceActorSearchI = {
@@ -40,6 +42,7 @@ const handleSearch = () => {
 	const params: VoiceActorSearchI = {
 		...DEFAULT_PARAMS,
 		keywords: searchQuery.value,
+		page: page.value,
 	};
 	fetchVoiceActors(params);
 };
@@ -49,6 +52,10 @@ const handleKeyPress = (event: KeyboardEvent) => {
 		handleSearch();
 	}
 };
+
+watch(page, () => {
+	handleSearch();
+});
 
 /*
 // definitions
@@ -104,6 +111,22 @@ voiceActorService
 			No results
 		</div>
   </div>
+
+	<div class="text-center blue">
+    <v-container>
+      <v-row justify="center">
+        <v-col cols="8">
+          <v-container class="max-width">
+            <v-pagination
+              v-model="page"
+              :length="15"
+              class="my-4"
+            ></v-pagination>
+          </v-container>
+        </v-col>
+      </v-row>
+    </v-container>
+	</div>
 </template>
 
 <style scoped>
