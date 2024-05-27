@@ -14,7 +14,6 @@ export const useStore = defineStore('main',  {
 
 	actions: {
 		async fetchVoiceActors(params: VoiceActorSearchI): Promise<void> {
-			console.log('make requests')
 			const { keywords, page, service } = params;
 			// Move to env file
     		const url = `https://api.sandbox.voice123.com/providers/search/?keywords=${keywords}&page=${page}&service=${service}`;
