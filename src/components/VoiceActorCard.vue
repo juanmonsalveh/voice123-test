@@ -88,10 +88,7 @@ const computedSummary = computed(() => {
 
           <v-card-text>
             <span v-for="(fragment, index) in computedSummary" :key="index">
-              <!-- {{ fragment }} -->
-
               <template v-if="searchParam  && fragment.toLowerCase() === searchParam.toLowerCase()">
-              <!-- <template v-if="searchParam && typeof props.searchParam === 'string' && fragment.toLowerCase() === searchParam.toLowerCase()"> -->
                 <mark>{{ fragment }}</mark>
               </template>
               <template v-else>
