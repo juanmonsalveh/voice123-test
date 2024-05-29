@@ -21,29 +21,31 @@ const handleAudioURL = (url: string) => {
   return audioUrl2;
 };
 
-let summarySplitted = ref(['']);
+let resultSummary = ref(['']);
 
-const handleSummary = (summary: string, searchParam: string) => {
+const handleSummary = (inputSummary: string, searchParam: String) => {
 
-  if (!summary) {
-    summarySplitted.value = [''];
+  if (!inputSummary) {
+    resultSummary.value = [''];
     return;
   }
   
-  if (!searchParam) {
-    summarySplitted.value = [summary];
+  if (!searchParam.valueOf) {
+    resultSummary.value = [inputSummary];
   } else {
-    summarySplitted.value = summary.split(new RegExp(`(${searchParam})`, 'gi'));
+    resultSummary.value = inputSummary.split(new RegExp(`(${searchParam.valueOf})`, 'gi'));
   }
+
 };
 
 const computedSummary = computed(() => {
   if (props.searchParam) {
     handleSummary(props.voiceActor.summary, props.searchParam);
   } else {
-    summarySplitted.value = [props.voiceActor.summary];
+    resultSummary.value = [props.voiceActor.summary];
   }
-  return summarySplitted.value;
+  // console.log('result summary: ', resultSummary);
+  return resultSummary.value;
 });
 
 </script>
@@ -82,12 +84,14 @@ const computedSummary = computed(() => {
 
           <v-card-text>
             <span v-for="(fragment, index) in computedSummary" :key="index">
-              <template v-if="searchParam && typeof props.searchParam === 'string' && fragment.toLowerCase() === searchParam.toLowerCase()">
+              {{ fragment }}
+
+              <!-- <template v-if="searchParam && typeof props.searchParam === 'string' && fragment.toLowerCase() === searchParam.toLowerCase()">
                 <mark>{{ fragment }}</mark>
               </template>
               <template v-else>
                 {{ fragment }}
-              </template>
+              </template> -->
             </span>
           </v-card-text>
           

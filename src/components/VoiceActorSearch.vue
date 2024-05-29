@@ -78,7 +78,7 @@ watch(page, () => {
 				v-for="actor in items"
 				:key="actor.id"
 				:voiceActor="actor"
-				:searchParam="searchQuery.valueOf"
+				:searchParam="searchQuery"
 			/>
 		</div>
 
