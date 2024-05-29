@@ -13,15 +13,25 @@ const props = defineProps({
   },
 });
 
+// Visual 
 const show = ref(false);
+let resultSummary = ref(['']);
 
+const computedSummary = computed(() => {
+  if (props.searchParam) {
+    handleSummary(props.voiceActor.summary, props.searchParam);
+  } else {
+    resultSummary.value = [props.voiceActor.summary];
+  }
+  return resultSummary.value;
+});
+
+// Behaviour
 const APIURL = 'https://sandbox.voice123.com/samples';
 const handleAudioURL = (url: string) => {
   const audioUrl2 = url.includes('http') ? (url) : (APIURL.concat(url.replace("demos","")));
   return audioUrl2;
 };
-
-let resultSummary = ref(['']);
 
 const handleSummary = (inputSummary: string, searchParam: String) => {
 
@@ -32,25 +42,17 @@ const handleSummary = (inputSummary: string, searchParam: String) => {
   
   if (!searchParam.valueOf) {
     resultSummary.value = [inputSummary];
-    console.log('result summary: ', resultSummary);
-  } else {
+    return
+  } 
 
-    console.log('search param: ', searchParam);
-    console.log('result summar: ', inputSummary.split(new RegExp(`(${searchParam})`, 'gi')));
-    resultSummary.value = inputSummary.split(new RegExp(`(${searchParam})`, 'gi'));
-    console.log('result summary splitted: ', resultSummary.value);
+  const paragraphs = inputSummary.split('.');  
+  for (const paragraph of paragraphs ) {
+    if (paragraph.toLowerCase().includes(searchParam.toLowerCase())) {
+      resultSummary.value = paragraph.split(new RegExp(`(${searchParam})`, 'gi'));      
+      break;
+    }
   }
-
 };
-
-const computedSummary = computed(() => {
-  if (props.searchParam) {
-    handleSummary(props.voiceActor.summary, props.searchParam);
-  } else {
-    resultSummary.value = [props.voiceActor.summary];
-  }
-  return resultSummary.value;
-});
 
 </script>
 
