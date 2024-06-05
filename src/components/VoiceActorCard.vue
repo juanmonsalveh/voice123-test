@@ -1,16 +1,59 @@
 <script setup lang="ts">
-import { ref, type PropType } from 'vue';
+import { ref, type PropType, computed } from 'vue';
 import type { VoiceActorI } from '@/interfaces';
 
-defineProps({
+const props = defineProps({
   voiceActor: {
     type: Object as PropType<VoiceActorI>,
     required: true,
   },
+  searchParam: {
+    type: String,
+    required: false,
+  },
 });
 
-
+// Visual 
 const show = ref(false);
+let resultSummary = ref(['']);
+
+const computedSummary = computed(() => {
+  if (props.searchParam) {
+    handleSummary(props.voiceActor.summary, props.searchParam);
+  } else {
+    resultSummary.value = [props.voiceActor.summary];
+  }
+  return resultSummary.value;
+});
+
+// Behaviour
+const APIURL = 'https://sandbox.voice123.com/samples';
+const handleAudioURL = (url: string) => {
+  const audioUrl2 = url.includes('http') ? (url) : (APIURL.concat(url.replace("demos","")));
+  return audioUrl2;
+};
+
+const handleSummary = (inputSummary: string, searchParam: String) => {
+
+  if (!inputSummary) {
+    resultSummary.value = [''];
+    return;
+  }
+  
+  if (!searchParam.valueOf) {
+    resultSummary.value = [inputSummary];
+    return
+  } 
+
+  const paragraphs = inputSummary.split('.');  
+  for (const paragraph of paragraphs ) {
+    if (paragraph.toLowerCase().includes(searchParam.toLowerCase())) {
+      resultSummary.value = paragraph.split(new RegExp(`(${searchParam})`, 'gi'));      
+      break;
+    }
+  }
+};
+
 </script>
 
 <template>
@@ -29,10 +72,7 @@ const show = ref(false);
       </v-card-title>
       <div class="audio-player audio-center">
         <audio class="audio-center" 
-          controls :src="encodeURIComponent(voiceActor.relevant_sample.file)">
-          <!-- create function to transform url and try -->
-          <!-- https://api.sandbox.voice123.com/demo27794761_52693.mp3 -->
-          <a :href="encodeURIComponent(voiceActor.relevant_sample.file)">Download audio</a>
+          controls :src="handleAudioURL(voiceActor.relevant_sample.file)">
         </audio>
       </div>
       <v-card-actions>
@@ -45,11 +85,20 @@ const show = ref(false);
   
       <v-expand-transition>
         <div v-show="show">
+      
           <v-divider></v-divider>
-  
+
           <v-card-text>
-            {{voiceActor.summary}}
+            <span v-for="(fragment, index) in computedSummary" :key="index">
+              <template v-if="searchParam  && fragment.toLowerCase() === searchParam.toLowerCase()">
+                <mark>{{ fragment }}</mark>
+              </template>
+              <template v-else>
+                {{ fragment }}
+              </template>
+            </span>
           </v-card-text>
+          
         </div>
       </v-expand-transition>
     </v-card>

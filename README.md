@@ -24,28 +24,30 @@ npm run build
 
 ## Worklog.
 
-### GOAL
-
-Implement a text search functionality by using Voice123 API.
-
 ### Requirements:
 
 1. The prototype/app must have a search input field and a search button. A
 query must be executed after either hit the enter key or click on the "search"
 button.
 2. Show for every result:
+<br>
 a. Voice Actor Name. It must be a link on a new Tab/Window to the Voice
 Actor profile page: VA profile link follows the next structure:
 ```sh
 https://voice123.com/{username}
 ```
+<br>
 b. Voice Actor profile picture.
+<br>
 c. The first paragraph that matches the search with the searched text
 highlighted.
+<br>
 d. An audio player for listening to the relevant sample URL.
+<br>
 3. Results page/component must have a results paginator that follows shared image
 
 ***Deadline: May 21, 12.01pm***
+<br>
 The followink links have information and notes related to my process while facing the challenge
 
 [Challenge aditional details](https://www.notion.so/voice123-test-64de3c5fb37c495f8f6a149ce3450956?pvs=4)
